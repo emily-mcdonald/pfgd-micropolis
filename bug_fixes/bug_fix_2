@@ -1,0 +1,2 @@
+Summary: Game starts at year 1800, should start at 1900
+Description: Found that the year gets set in the MainWindow.jave file in the micropolisj.gui folder in formatGameDate. Changed 1800 to 1900
