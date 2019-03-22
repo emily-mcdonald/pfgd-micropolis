@@ -1,0 +1,10 @@
+Summary: Fire stations turn into police stations
+Description: Found the bug in MapScanner.java in the function doFireStation. When the game repairs the fire station, it repairs it as a police station. Changed POLICESTATION to FIRESTATION in repairZone
+
+void doFireStation()
+	{
+		boolean powerOn = checkZonePower();
+		city.fireStationCount++;
+		if ((city.cityTime % 8) == 0) {
+			repairZone(FIRESTATION, 3);
+		}
