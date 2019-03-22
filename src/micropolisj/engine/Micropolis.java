@@ -159,7 +159,7 @@ public class Micropolis
 	int comValve;   // ranges between -1500 and 1500
 	int indValve;   // ranges between -1500 and 1500
 
-	boolean resCap;  // resident demand a stadium, caps resValve at 0
+	boolean resCap;  // residents demand a stadium, caps resValve at 0
 	boolean comCap;  // commerce demands airport,   caps comValve at 0
 	boolean indCap;  // industry demands sea port,  caps indValve at 0
 	int crimeRamp;

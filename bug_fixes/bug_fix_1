@@ -1,0 +1,2 @@
+Summary: Typo in the message "more resident zones needed"
+Description: Found the message under CityMessages.properties file in the strings folder. Corrected 'resident' to 'residential'
