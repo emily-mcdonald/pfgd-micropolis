@@ -1,2 +1,10 @@
 Summary: Game starts at year 1800, should start at 1900
-Description: Found that the year gets set in the MainWindow.jave file in the micropolisj.gui folder in formatGameDate. Changed 1800 to 1900
+Description: Found that the year gets set in the MainWindow.java file in the micropolisj.gui folder in formatGameDate. Changed 1800 to 1900
+
+public static String formatGameDate(int cityTime)
+	{
+		Calendar c = Calendar.getInstance();
+		c.set(1900 + cityTime/48,
+			(cityTime%48)/4,
+			(cityTime%4)*7 + 1
+			);

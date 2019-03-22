@@ -1,0 +1,9 @@
+Summary: rubble cannot be bulldozed
+Description: Found the tags for each type of tile in tiles.rc, and the rubble tiles aren't tagged as bulldozable. Added (bulldozable) tags
+
+
+# BEGIN RUBBLE (4 frames) #
+44    terrain@0,704     (bulldozable)(noburn)(description=#3)
+45    terrain@0,720     (bulldozable)(noburn)(description=#3)
+46    terrain@0,736     (bulldozable)(noburn)(description=#3)
+47    terrain@0,752     (bulldozable)(noburn)(description=#3)
