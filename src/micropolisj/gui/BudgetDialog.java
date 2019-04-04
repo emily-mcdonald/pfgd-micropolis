@@ -105,7 +105,7 @@ public class BudgetDialog extends JDialog
 		this.origPolicePct = engine.policePercent;
 
 		// give text fields of the fund-level spinners a minimum size
-		taxRateEntry = new JSpinner(new SpinnerNumberModel(7,0,20,1));
+		taxRateEntry = new JSpinner(new SpinnerNumberModel(7,0,50,1));
 
 		// widgets to set funding levels
 		roadFundEntry = new JSlider(JSlider.HORIZONTAL, 0, 100, 100);
