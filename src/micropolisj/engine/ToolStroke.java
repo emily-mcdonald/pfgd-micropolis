@@ -172,6 +172,60 @@ public class ToolStroke
 		fixBorder(eff, bi.width, bi.height);
 		return true;
 	}
+	
+	//attempt replicating applyzone
+	boolean sellZone(ToolEffectIfc eff, int base)
+	{
+		assert isZoneCenter(base);
+
+		TileSpec.BuildingInfo bi = Tiles.get(base).getBuildingInfo();
+		if (bi == null) {
+			throw new Error("Cannot applyZone to #"+base);
+		}
+
+		int cost = tool.getToolCost();
+		boolean canBuild = true;
+		for (int rowNum = 0; rowNum < bi.height; rowNum++) {
+			for (int columnNum = 0; columnNum < bi.width; columnNum++)
+			{
+				int tileValue = eff.getTile(columnNum, rowNum);
+				tileValue = tileValue & LOMASK;
+
+				if (tileValue == DIRT) {
+					canBuild = false;
+				}
+				else {
+						canBuild = true;
+					}
+				
+			}
+		}
+		if (!canBuild) {
+			eff.toolResult(ToolResult.UH_OH);
+			return false;
+		}
+
+		eff.spend(cost);
+
+		int i = 0;
+		for (int rowNum = 0; rowNum < bi.height; rowNum++)
+		{
+			for (int columnNum = 0; columnNum < bi.width; columnNum++)
+			{
+				eff.setTile(columnNum, rowNum, (char) bi.members[i]);
+				i++;
+			}
+		}
+
+		fixBorder(eff, bi.width, bi.height);
+		return true;
+	}
+	//End attempt
+	
+	
+	
+	
+	
 
 	//compatible function
 	void fixBorder(int left, int top, int right, int bottom)

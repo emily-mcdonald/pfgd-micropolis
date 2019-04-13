@@ -1289,7 +1289,7 @@ public class Micropolis
 		}
 
 		double migration = normResPop * (employment - 1);
-		final double BIRTH_RATE = 0.02;
+		final double BIRTH_RATE = 0.1;
 		double births = (double)normResPop * BIRTH_RATE;
 		double projectedResPop = normResPop + migration + births;
 
@@ -1314,9 +1314,9 @@ public class Micropolis
 		temp = 1.0;
 		switch (z)
 		{
-		case 0: temp = 1.2; break;
-		case 1: temp = 1.1; break;
-		case 2: temp = 0.98; break;
+		case 0: temp = 0; break;
+		case 1: temp = 0; break;
+		case 2: temp = 0; break;
 		}
 
 		double projectedIndPop = indPop * laborBase * temp;
